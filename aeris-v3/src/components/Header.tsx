@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import { MobileMenu } from "./client/MobileMenu";
 
 export function Header() {
   return (
@@ -6,6 +8,13 @@ export function Header() {
       <div className="container header__inner">
         <Link className="brand" href="/" aria-label="Aeris">
           <span className="brand__mark" aria-hidden>
+            <Image
+              src="/logo.png"
+              alt="Aeris Logo"
+              width={40}
+              height={40}
+              className="brand__logo"
+            />
             aeris
           </span>
         </Link>
@@ -21,6 +30,8 @@ export function Header() {
             Shop
           </Link>
         </nav>
+
+        <MobileMenu />
 
         <div className="header__actions">
           <button className="iconButton" type="button" aria-label="Notificações">

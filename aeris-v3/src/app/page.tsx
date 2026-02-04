@@ -9,6 +9,7 @@ const featuredShoes = [
     progress: "68%",
     author: "Joana Mendes",
     tone: "Gradiente alperce",
+    image: "/products/1/1 (4).png",
   },
   {
     name: "Vaporium X1",
@@ -18,6 +19,7 @@ const featuredShoes = [
     author: "Ricardo Costa",
     tone: "Carvão com neon",
     badge: "Em produção",
+    image: "/products/1/1 (2).png",
   },
   {
     name: "AeroRun 307",
@@ -26,6 +28,7 @@ const featuredShoes = [
     progress: "73%",
     author: "Inês Batista",
     tone: "Nude esportivo",
+    image: "/products/1/1 (3).png",
   },
 ];
 
@@ -53,7 +56,14 @@ export default function Home() {
 
           <div className="heroAeris__visual">
             <div className="heroAeris__card">
-              <div className="heroAeris__shoe" aria-hidden />
+              <div className="heroAeris__shoe" aria-hidden>
+                <Image
+                  src="/products/1/1 (3).png"
+                  alt="Neopulse Runner"
+                  fill
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
               <div className="heroAeris__info">
                 <div>
                   <h3>Neopulse Runner</h3>
@@ -98,7 +108,14 @@ export default function Home() {
                 {shoe.badge ? (
                   <span className="featuredCard__badge">{shoe.badge}</span>
                 ) : null}
-                <div className="featuredCard__media" aria-hidden />
+                <div className="featuredCard__media">
+                  <Image
+                    src={shoe.image}
+                    alt={shoe.name}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
                 <div className="featuredCard__body">
                   <h3>{shoe.name}</h3>
                   <p className="featuredCard__tone">{shoe.tone}</p>
