@@ -1,28 +1,45 @@
 import Link from "next/link";
-import { CartCount } from "@/components/client/CartCount";
 
 export function Header() {
   return (
-    <header className="header">
+    <header className="siteHeader">
       <div className="container header__inner">
-        <Link className="brand" href="/">
+        <Link className="brand" href="/" aria-label="Aeris">
           <span className="brand__mark" aria-hidden>
-            A
+            aeris
           </span>
-          <span className="brand__text">Aeris</span>
         </Link>
 
-        <nav className="nav">
-          <Link href="/shop">Shop</Link>
-          <Link href="/shop?tag=running">Running</Link>
-          <Link href="/shop?tag=training">Training</Link>
-          <Link href="/shop?tag=lifestyle">Lifestyle</Link>
+        <nav className="navMain">
+          <Link className="navMain__item navMain__item--active" href="/create">
+            Create
+          </Link>
+          <Link className="navMain__item" href="/discover">
+            Discover
+          </Link>
+          <Link className="navMain__item" href="/shop">
+            Shop
+          </Link>
         </nav>
 
         <div className="header__actions">
-          <Link className="iconLink" href="/cart" aria-label="Open cart">
-            Cart <CartCount />
+          <button className="iconButton" type="button" aria-label="Notificações">
+            🔔
+          </button>
+          <Link className="btn btn--primary" href="/launch">
+            Launch Your idea
           </Link>
+          <button className="languageButton" type="button">
+            Português
+            <span className="languageButton__flag" aria-hidden>
+              🇵🇹
+            </span>
+          </button>
+          <button className="avatar" type="button" aria-label="Perfil">
+            <span className="avatar__inner" aria-hidden>
+              MR
+            </span>
+          </button>
         </div>
       </div>
     </header>

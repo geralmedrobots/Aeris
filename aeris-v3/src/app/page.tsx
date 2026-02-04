@@ -1,85 +1,129 @@
 import Link from "next/link";
-import { products } from "@/lib/products";
-import { ProductCard } from "@/components/ProductCard";
+
+const featuredShoes = [
+  {
+    name: "AirVolt Retro",
+    votes: "7.3k",
+    likes: "1.2k",
+    progress: "68%",
+    author: "Joana Mendes",
+    tone: "Gradiente alperce",
+  },
+  {
+    name: "Vaporium X1",
+    votes: "9.4k",
+    likes: "1.5k",
+    progress: "1000%",
+    author: "Ricardo Costa",
+    tone: "Carvão com neon",
+    badge: "Em produção",
+  },
+  {
+    name: "AeroRun 307",
+    votes: "6.3k",
+    likes: "890",
+    progress: "73%",
+    author: "Inês Batista",
+    tone: "Nude esportivo",
+  },
+];
 
 export default function Home() {
-  const featured = products.slice(0, 4);
-
   return (
-    <main>
-      <section className="hero">
-        <div className="container hero__inner">
-          <div className="hero__copy">
-            <p className="eyebrow">NEW SEASON</p>
-            <h1 className="hero__title">Move fast. Stay light.</h1>
-            <p className="hero__lead">
-              Sportswear essentials built for training days and weekend city runs.
-              Original demo storefront.
+    <main className="home">
+      <section className="heroAeris">
+        <div className="container heroAeris__inner">
+          <div className="heroAeris__copy">
+            <p className="eyebrow">Aeris Collective</p>
+            <h1>Tu crias. Nós tornamos real.</h1>
+            <p className="heroAeris__lead">
+              Cria os teus ténis ideais, valida com a comunidade, compra e
+              torna-os reais.
             </p>
-            <div className="row gap">
-              <Link className="btn" href="/shop">
-                Shop now
+            <div className="heroAeris__actions">
+              <Link className="btn btn--primary" href="/create">
+                Criar agora
               </Link>
-              <Link className="btn btn--ghost" href="/shop?tag=new">
-                New arrivals
+              <Link className="btn btn--ghost" href="/discover">
+                Explorar ideias
               </Link>
             </div>
           </div>
 
-          <div className="hero__panel" aria-hidden>
-            <div className="heroCard">
-              <div className="heroCard__stripe" />
-              <div className="heroCard__content">
-                <p className="muted">Drop of the week</p>
-                <p className="heroCard__name">STRIDE Trailrunner</p>
-                <p className="muted">Grip + cushion for any surface</p>
-                <Link className="textLink" href="/product/stride-trailrunner">
-                  View product →
-                </Link>
+          <div className="heroAeris__visual">
+            <div className="heroAeris__card">
+              <div className="heroAeris__shoe" aria-hidden />
+              <div className="heroAeris__info">
+                <div>
+                  <h3>Neopulse Runner</h3>
+                  <div className="heroAeris__stats">
+                    <span>❤ 8.2k</span>
+                    <span>☆ 1.5k</span>
+                    <span>🗳 1.8k</span>
+                  </div>
+                </div>
+                <div className="heroAeris__meta">
+                  <span className="heroAeris__author">Marco Ribeiro</span>
+                  <span className="heroAeris__votes">12,355 votos</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="featured">
         <div className="container">
-          <div className="section__head">
-            <h2>Featured</h2>
-            <Link className="textLink" href="/shop">
-              See all →
-            </Link>
-          </div>
-          <div className="grid">
-            {featured.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--alt">
-        <div className="container">
-          <div className="split">
+          <div className="featured__header">
             <div>
-              <h2>Training-ready layers</h2>
-              <p className="muted">
-                Soft fleece. Sweat-wicking liners. Built to stack and move.
-              </p>
-              <div className="row gap">
-                <Link className="btn btn--ghost" href="/shop?tag=apparel">
-                  Shop apparel
-                </Link>
-                <Link className="btn btn--ghost" href="/shop?tag=training">
-                  Shop training
-                </Link>
+              <h2>Em destaque</h2>
+              <div className="tabs">
+                <button className="tab tab--active" type="button">
+                  Tendências
+                </button>
+                <button className="tab" type="button">
+                  Mais votados
+                </button>
+                <button className="tab" type="button">
+                  Acabaram de ser lançados
+                </button>
               </div>
             </div>
-            <div className="featureTiles" aria-hidden>
-              <div className="tile" />
-              <div className="tile tile--accent" />
-              <div className="tile" />
-            </div>
+          </div>
+
+          <div className="featuredGrid">
+            {featuredShoes.map((shoe) => (
+              <article className="featuredCard" key={shoe.name}>
+                {shoe.badge ? (
+                  <span className="featuredCard__badge">{shoe.badge}</span>
+                ) : null}
+                <div className="featuredCard__media" aria-hidden />
+                <div className="featuredCard__body">
+                  <h3>{shoe.name}</h3>
+                  <p className="featuredCard__tone">{shoe.tone}</p>
+                  <div className="featuredCard__stats">
+                    <span>❤ {shoe.votes}</span>
+                    <span>☆ {shoe.likes}</span>
+                  </div>
+                  <div className="featuredCard__author">
+                    <span className="avatar avatar--sm" aria-hidden>
+                      {shoe.author
+                        .split(" ")
+                        .map((part) => part[0])
+                        .join("")}
+                    </span>
+                    <span>{shoe.author}</span>
+                  </div>
+                  <div className="featuredCard__progress">
+                    <span />
+                  </div>
+                  <div className="featuredCard__footer">
+                    <span>{shoe.progress}</span>
+                    <span>votos</span>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
