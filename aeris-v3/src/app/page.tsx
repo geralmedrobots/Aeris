@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { DynamicImageCard } from "@/components/client/DynamicImageCard";
+import { FeaturedPagination } from "@/components/client/FeaturedPagination";
 
 const featuredShoes = [
   {
     name: "AirVolt Retro",
     votes: "7.3k",
     likes: "1.2k",
-    progress: "68%",
+    progress: "10%",
     author: "Joana Mendes",
     tone: "Gradiente alperce",
     image: "/products/1/1.png",
@@ -25,7 +26,7 @@ const featuredShoes = [
     name: "AeroRun 307",
     votes: "6.3k",
     likes: "890",
-    progress: "73%",
+    progress: "50%",
     author: "Inês Batista",
     tone: "Nude esportivo",
     image: "/products/1/4.png",
@@ -248,55 +249,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="featuredGrid">
-            {featuredShoes.map((shoe) => (
-              <article className="featuredCard" key={shoe.name}>
-                {shoe.badge ? (
-                  <span className="featuredCard__badge">{shoe.badge}</span>
-                ) : null}
-                <h3 className="featuredCard__title">{shoe.name}</h3>
-                <DynamicImageCard
-                  src={shoe.image}
-                  alt={shoe.name}
-                  className="featuredCard__media"
-                />
-                <div className="featuredCard__body">
-                  <p className="featuredCard__tone">{shoe.tone}</p>
-                  <div className="featuredCard__stats">
-                    <span className="featuredCard__stat">
-                      <span className="featuredCard__icon">❤</span>
-                      <span className="featuredCard__value">{shoe.votes}</span>
-                    </span>
-                    <span className="featuredCard__stat">
-                      <span className="featuredCard__icon">☆</span>
-                      <span className="featuredCard__value">{shoe.likes}</span>
-                    </span>
-                  </div>
-                  <div className="featuredCard__author">
-                    <span className="avatar avatar--sm" aria-hidden>
-                      {shoe.author
-                        .split(" ")
-                        .map((part) => part[0])
-                        .join("")}
-                    </span>
-                    <span className="featuredCard__authorName">{shoe.author}</span>
-                  </div>
-                  <div className="featuredCard__progress">
-                    <div className="featuredCard__progressBar">
-                      <span
-                        className="featuredCard__progressFill"
-                        style={{ width: shoe.progress }}
-                      />
-                    </div>
-                  </div>
-                  <div className="featuredCard__footer">
-                    <span className="featuredCard__progressText">{shoe.progress}</span>
-                    <span className="featuredCard__votesLabel">para produção</span>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+          <FeaturedPagination shoes={featuredShoes} itemsPerPage={6} />
         </div>
       </section>
     </main>
