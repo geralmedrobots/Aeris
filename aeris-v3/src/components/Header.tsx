@@ -1,62 +1,45 @@
 import Link from "next/link";
-import Image from "next/image";
-import { CartCount } from "@/components/client/CartCount";
 
 export function Header() {
   return (
     <header className="siteHeader">
-      <div className="promoBar">Devoluções e trocas gratuitas</div>
-      <div className="utilityBar">
-        <div className="container utilityBar__inner">
-          <div className="utilityBar__links">
-            <Link href="/help">ajuda</Link>
-            <Link href="/orders">encomendas e devoluções</Link>
-          </div>
-          <Link className="utilityBar__cta" href="/membership">
-            torna-te membro
+      <div className="container header__inner">
+        <Link className="brand" href="/" aria-label="Aeris">
+          <span className="brand__mark" aria-hidden>
+            aeris
+          </span>
+        </Link>
+
+        <nav className="navMain">
+          <Link className="navMain__item navMain__item--active" href="/create">
+            Create
           </Link>
-        </div>
-      </div>
-
-      <div className="navBar">
-        <div className="navBar__inner">
-          <Link className="brandLogo" href="/" aria-label="Home">
-            <span className="srOnly">Aeris</span>
-            <Image
-              src="/logo.png"
-              alt="Aeris"
-              width={140}
-              height={60}
-              priority
-              style={{ width: 'auto', height: 'auto', maxWidth: '140px' }}
-            />
+          <Link className="navMain__item" href="/discover">
+            Discover
           </Link>
+          <Link className="navMain__item" href="/shop">
+            Shop
+          </Link>
+        </nav>
 
-          <nav className="navMain">
-            <Link href="/shop?category=homem">HOMEM</Link>
-            <Link href="/shop?category=mulher">MULHER</Link>
-            <Link href="/shop?category=crianca">CRIANÇA</Link>
-            <Link href="/shop?category=sapatilhas">SAPATILHAS</Link>
-            <Link href="/shop?category=desportos">DESPORTOS</Link>
-            <Link href="/shop?category=outlet">OUTLET</Link>
-          </nav>
-
-          <div className="navActions">
-            <label className="searchBox">
-              <span className="srOnly">Procurar</span>
-              <input type="search" placeholder="Procurar" />
-              <span className="searchBox__icon" aria-hidden>
-                ⌕
-              </span>
-            </label>
-            <button className="iconButton" type="button" aria-label="Favoritos">
-              ♡
-            </button>
-            <Link className="iconButton" href="/cart" aria-label="Carrinho">
-              🛍
-              <CartCount />
-            </Link>
-          </div>
+        <div className="header__actions">
+          <button className="iconButton" type="button" aria-label="Notificações">
+            🔔
+          </button>
+          <Link className="btn btn--primary" href="/launch">
+            Launch Your idea
+          </Link>
+          <button className="languageButton" type="button">
+            Português
+            <span className="languageButton__flag" aria-hidden>
+              🇵🇹
+            </span>
+          </button>
+          <button className="avatar" type="button" aria-label="Perfil">
+            <span className="avatar__inner" aria-hidden>
+              MR
+            </span>
+          </button>
         </div>
       </div>
     </header>
