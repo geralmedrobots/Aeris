@@ -1788,19 +1788,21 @@ select:focus {
   }
 
   .heroAeris {
-    padding: 24px 0 16px;
+    padding: 40px 0 32px;
   }
 
   .heroAeris__lead {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .heroAeris__shoe {
-    height: 160px;
+    height: 240px;
   }
 
   .heroAeris__card {
-    padding: 16px;
+    width: 98%;
+    max-width: none;
+    padding: 20px;
   }
 
   .section {
