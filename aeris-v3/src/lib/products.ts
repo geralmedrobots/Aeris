@@ -26,9 +26,9 @@ export const products: Product[] = [
     ],
     sizes: ["39", "40", "41", "42", "43", "44", "45"],
     images: [
-      "/products/trailrunner-1.jpg",
-      "/products/trailrunner-2.jpg",
-      "/products/trailrunner-3.jpg",
+      "/products/pngtree-holographic-sneakers-2026-branding-chunky-sole-design-futuristic-athletic-footwear-fashion-image_19635922.png",
+      "/products/pngtree-futuristic-3d-wireframe-sneakers-on-a-production-line-image_20423440.png",
+      "/products/futuristic-and-stylish-sneaker-designed-with-a-transparent-outer-shell-one-of-kind_11304108.png",
     ],
     description:
       "Lightweight trail shoe with responsive cushioning and a lugged outsole for wet or loose surfaces. Built for daily runs and weekend adventures.",
@@ -46,9 +46,9 @@ export const products: Product[] = [
     ],
     sizes: ["36", "37", "38", "39", "40", "41", "42"],
     images: [
-      "/products/city-1.jpg",
-      "/products/city-2.jpg",
-      "/products/city-3.jpg",
+      "/products/71FYBBtfuoL._AC_UY900_.png",
+      "/products/il_570xN.6795842081_l6ry.png",
+      "/products/E6M5HK7EYJC43BSXWLMSCXBWHY.png",
     ],
     description:
       "Clean silhouette with soft lining and a durable rubber cupsole. A minimal sneaker that works with everything.",
@@ -65,11 +65,7 @@ export const products: Product[] = [
       { name: "Deep Navy", hex: "#0B1B3A" },
     ],
     sizes: ["XS", "S", "M", "L", "XL"],
-    images: [
-      "/products/hoodie-1.jpg",
-      "/products/hoodie-2.jpg",
-      "/products/hoodie-3.jpg",
-    ],
+    images: ["/products/1.png"],
     description:
       "Heavyweight fleece hoodie with a relaxed fit, rib cuffs, and a roomy kangaroo pocket. Made for warm-ups and cool-downs.",
   },
@@ -86,9 +82,8 @@ export const products: Product[] = [
     ],
     sizes: ["XS", "S", "M", "L", "XL"],
     images: [
-      "/products/shorts-1.jpg",
-      "/products/shorts-2.jpg",
-      "/products/shorts-3.jpg",
+      "/products/1542024131342342.png",
+      "/products/1.png",
     ],
     description:
       "Breathable woven outer short with built-in liner. Sweat-wicking and ready for high-intensity sessions.",

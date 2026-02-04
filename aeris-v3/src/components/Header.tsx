@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { CartCount } from "@/components/client/CartCount";
 
 export function Header() {
@@ -18,11 +19,17 @@ export function Header() {
       </div>
 
       <div className="navBar">
-        <div className="container navBar__inner">
-          <Link className="brandLogo" href="/" aria-label="Adidas">
-            <span className="brandLogo__mark" aria-hidden>
-              adidas
-            </span>
+        <div className="navBar__inner">
+          <Link className="brandLogo" href="/" aria-label="Home">
+            <span className="srOnly">Aeris</span>
+            <Image
+              src="/logo.png"
+              alt="Aeris"
+              width={140}
+              height={60}
+              priority
+              style={{ width: 'auto', height: 'auto', maxWidth: '140px' }}
+            />
           </Link>
 
           <nav className="navMain">
