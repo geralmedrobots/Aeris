@@ -47,6 +47,29 @@ export default async function RootLayout({
           {children}
           <Footer />
         </CartProvider>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function handleScroll() {
+                  const header = document.querySelector('.siteHeader');
+                  if (header) {
+                    if (window.scrollY > 50) {
+                      header.classList.add('scrolled');
+                    } else {
+                      header.classList.remove('scrolled');
+                    }
+                  }
+                }
+                
+                if (typeof window !== 'undefined') {
+                  window.addEventListener('scroll', handleScroll);
+                  handleScroll();
+                }
+              })();
+            `,
+          }}
+        />
       </body>
     </html>
   );

@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { LanguageToggle } from "./LanguageToggle";
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
@@ -42,21 +44,36 @@ export function MobileMenu() {
             <div className="mobileMenu__divider" />
 
             <Link
-              className="mobileMenu__item"
-              href="/create"
+              className={`mobileMenu__item ${
+                pathname === "/about" ? "mobileMenu__item--active" : ""
+              }`}
+              href="/about"
               onClick={() => setIsOpen(false)}
             >
-              Create
+              About Us
             </Link>
             <Link
-              className="mobileMenu__item"
+              className={`mobileMenu__item ${
+                pathname === "/discover" ? "mobileMenu__item--active" : ""
+              }`}
               href="/discover"
               onClick={() => setIsOpen(false)}
             >
               Discover
             </Link>
             <Link
-              className="mobileMenu__item"
+              className={`mobileMenu__item ${
+                pathname === "/design" ? "mobileMenu__item--active" : ""
+              }`}
+              href="/design"
+              onClick={() => setIsOpen(false)}
+            >
+              Design
+            </Link>
+            <Link
+              className={`mobileMenu__item ${
+                pathname === "/shop" ? "mobileMenu__item--active" : ""
+              }`}
               href="/shop"
               onClick={() => setIsOpen(false)}
             >

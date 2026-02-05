@@ -1,0 +1,582 @@
+/* ========================================
+   About Us Page - Clean & Minimal Style
+   ======================================== */
+
+.aboutPage {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #000000;
+}
+
+/* ========================================
+   Hero Section
+   ======================================== */
+
+.aboutHero {
+  padding: 120px 0 80px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.aboutHero__content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.aboutHero__badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #333333;
+  margin-bottom: 24px;
+}
+
+.aboutHero__title {
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 0 0 24px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+
+.aboutHero__subtitle {
+  font-size: 20px;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================================
+   Mission Section
+   ======================================== */
+
+.aboutMission {
+  padding: 100px 0;
+  background: #f5f5f5;
+}
+
+.mission__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.mission__title {
+  font-size: 42px;
+  font-weight: 800;
+  margin: 0 0 32px;
+  color: #000000;
+  letter-spacing: -0.01em;
+}
+
+.mission__text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0 0 24px;
+}
+
+.mission__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.mission__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat__number {
+  font-size: 36px;
+  font-weight: 800;
+  color: #000000;
+  line-height: 1;
+}
+
+.stat__label {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.mission__image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.mission__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.mission__image:hover .mission__img {
+  transform: scale(1.05);
+}
+
+/* ========================================
+   Values Section
+   ======================================== */
+
+.aboutValues {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.section__title {
+  font-size: 42px;
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+  color: #000000;
+}
+
+.section__subtitle {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.65);
+  text-align: center;
+  margin: 0 0 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.values__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.value__card {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 40px 32px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.value__card:hover {
+  transform: translateY(-8px);
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.value__icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.value__title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: #000000;
+}
+
+.value__description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+
+/* ========================================
+   Team Section
+   ======================================== */
+
+.aboutTeam {
+  padding: 100px 0;
+  background: #f5f5f5;
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.team__card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.team__card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.team__imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.team__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team__card:hover .team__image {
+  transform: scale(1.1);
+}
+
+.team__info {
+  padding: 24px;
+  text-align: center;
+}
+
+.team__name {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #000000;
+}
+
+.team__role {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* ========================================
+   Story/Timeline Section
+   ======================================== */
+
+.aboutStory {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.story__title {
+  font-size: 42px;
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 80px;
+  letter-spacing: -0.01em;
+  color: #000000;
+}
+
+.story__timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.story__timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(0, 0, 0, 0.1);
+  transform: translateX(-50%);
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.timeline__item:nth-child(odd) {
+  grid-template-areas: "content year";
+}
+
+.timeline__item:nth-child(even) {
+  grid-template-areas: "year content";
+}
+
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  background: #000000;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline__year {
+  font-size: 48px;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.15);
+  line-height: 1;
+}
+
+.timeline__item:nth-child(odd) .timeline__year {
+  text-align: right;
+  grid-area: year;
+}
+
+.timeline__item:nth-child(even) .timeline__year {
+  text-align: left;
+  grid-area: year;
+}
+
+.timeline__item:nth-child(odd) > div:not(.timeline__year) {
+  grid-area: content;
+  text-align: right;
+}
+
+.timeline__item:nth-child(even) > div:not(.timeline__year) {
+  grid-area: content;
+  text-align: left;
+}
+
+.timeline__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: #000000;
+}
+
+.timeline__desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+
+/* ========================================
+   CTA Section
+   ======================================== */
+
+.aboutCTA {
+  padding: 100px 0;
+  background: #f5f5f5;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cta__content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta__title {
+  font-size: 48px;
+  font-weight: 900;
+  margin: 0 0 20px;
+  color: #000000;
+}
+
+.cta__description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0 0 40px;
+}
+
+.cta__actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 16px 36px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  display: inline-block;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, #000000 0%, #333333 100%);
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: #000000;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.btn--secondary:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: #000000;
+  transform: translateY(-3px);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .mission__grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .mission__stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .story__timeline::before {
+    left: 20px;
+  }
+
+  .timeline__item {
+    grid-template-columns: auto 1fr !important;
+    grid-template-areas: "year content" !important;
+    gap: 40px;
+  }
+
+  .timeline__year {
+    font-size: 36px;
+    text-align: left !important;
+  }
+
+  .timeline__item > div:not(.timeline__year) {
+    text-align: left !important;
+  }
+
+  .timeline__item::before {
+    left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutHero {
+    padding: 80px 0 60px;
+  }
+
+  .aboutHero__title {
+    font-size: 36px;
+  }
+
+  .aboutHero__subtitle {
+    font-size: 16px;
+  }
+
+  .section__title {
+    font-size: 32px;
+  }
+
+  .mission__title {
+    font-size: 32px;
+  }
+
+  .mission__stats {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .values__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story__title {
+    font-size: 32px;
+    margin-bottom: 60px;
+  }
+
+  .timeline__item {
+    gap: 20px;
+  }
+
+  .timeline__year {
+    font-size: 28px;
+  }
+
+  .cta__title {
+    font-size: 36px;
+  }
+
+  .cta__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutHero__title {
+    font-size: 28px;
+  }
+
+  .mission__stat {
+    text-align: center;
+  }
+
+  .stat__number {
+    font-size: 28px;
+  }
+
+  .value__card {
+    padding: 30px 24px;
+  }
+
+  .timeline__year {
+    font-size: 24px;
+  }
+
+  .timeline__title {
+    font-size: 20px;
+  }
+}
+
