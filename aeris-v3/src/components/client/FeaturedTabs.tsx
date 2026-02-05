@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from 'react';
 import { FeaturedCardCarousel } from './FeaturedCardCarousel';
+import type { Locale } from '@/lib/i18n';
+import { t } from '@/lib/i18n';
 
 export type FeaturedCategory = 'bestSellers' | 'mostVoted' | 'mostLiked';
 
@@ -39,7 +41,7 @@ function chunk<T>(items: T[], size: number): T[][] {
 	return out;
 }
 
-export function FeaturedTabs({ shoes }: { shoes: FeaturedShoe[] }) {
+export function FeaturedTabs({ shoes, locale = 'pt' }: { shoes: FeaturedShoe[]; locale?: Locale }) {
 	const [active, setActive] = useState<FeaturedCategory>('bestSellers');
 
 	const sorted = useMemo(() => {
@@ -63,8 +65,8 @@ export function FeaturedTabs({ shoes }: { shoes: FeaturedShoe[] }) {
 			<div className="container">
 				<div className="featured__header">
 					<div>
-						<h2>Em destaque</h2>
-						<div className="tabs" role="tablist" aria-label="Categorias em destaque">
+						<h2>{t(locale, 'featured_title')}</h2>
+						<div className="tabs" role="tablist" aria-label={t(locale, 'featured_aria')}>
 							<button
 								className={`tab ${active === 'bestSellers' ? 'tab--active' : ''}`}
 								type="button"
@@ -72,7 +74,7 @@ export function FeaturedTabs({ shoes }: { shoes: FeaturedShoe[] }) {
 								aria-selected={active === 'bestSellers'}
 								onClick={() => setActive('bestSellers')}
 							>
-								Mais vendidos
+								{t(locale, 'featured_tab_best')}
 							</button>
 							<button
 								className={`tab ${active === 'mostVoted' ? 'tab--active' : ''}`}
@@ -81,7 +83,7 @@ export function FeaturedTabs({ shoes }: { shoes: FeaturedShoe[] }) {
 								aria-selected={active === 'mostVoted'}
 								onClick={() => setActive('mostVoted')}
 							>
-								Mais votados
+								{t(locale, 'featured_tab_voted')}
 							</button>
 							<button
 								className={`tab ${active === 'mostLiked' ? 'tab--active' : ''}`}
@@ -90,7 +92,7 @@ export function FeaturedTabs({ shoes }: { shoes: FeaturedShoe[] }) {
 								aria-selected={active === 'mostLiked'}
 								onClick={() => setActive('mostLiked')}
 							>
-								Mais gostados
+								{t(locale, 'featured_tab_liked')}
 							</button>
 						</div>
 					</div>
@@ -105,4 +107,3 @@ export function FeaturedTabs({ shoes }: { shoes: FeaturedShoe[] }) {
 		</section>
 	);
 }
-

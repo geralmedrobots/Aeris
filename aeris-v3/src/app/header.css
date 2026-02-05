@@ -1,0 +1,404 @@
+/* ========================================
+   Header Styles - Responsive & Styled
+   ======================================== */
+
+.siteHeader {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(245, 246, 251, 0.95);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 8px rgba(31, 38, 51, 0.04);
+}
+
+.header__inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 0;
+}
+
+/* Brand / Logo */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: var(--accent);
+  gap: 10px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.brand:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+
+.brand__mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand__logo {
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.brand:hover .brand__logo {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+/* Navigation Main */
+.navMain {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-self: center;
+}
+
+.navMain__item {
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navMain__item:hover {
+  background: rgba(47, 59, 84, 0.08);
+  color: var(--accent);
+}
+
+.navMain__item--active {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.navMain__item--active:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(47, 59, 84, 0.2);
+}
+
+/* Header Actions */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-self: end;
+}
+
+.iconButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+
+.iconButton:hover {
+  background: var(--panel-2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px rgba(47, 59, 84, 0.3);
+}
+
+.avatar__inner {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* Mobile Menu Button */
+.mobileMenuButton {
+  display: none;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 1001;
+  position: relative;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 24px;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger--open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger--open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu Overlay & Panel */
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 280px;
+  max-width: 85vw;
+  background: var(--panel);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 12px;
+  animation: slideIn 0.3s ease;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.mobileMenu__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 12px;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+/* Mobile Menu Content */
+.mobileMenu__userName {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.mobileMenu__divider {
+  height: 1px;
+  background: var(--border);
+  margin: 8px 0;
+}
+
+.mobileMenu__item {
+  padding: 16px 20px;
+  font-weight: 600;
+  color: var(--text);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  font-size: 16px;
+  display: block;
+}
+
+.mobileMenu__item:hover {
+  background: var(--panel-2);
+  transform: translateX(4px);
+}
+
+.mobileMenu__item:active {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.mobileMenu__footer {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+/* Language Toggle Button */
+.languageButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 18px;
+  width: 100%;
+  background: var(--panel-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.languageButton:hover {
+  background: var(--accent);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(47, 59, 84, 0.15);
+}
+
+.languageButton__flag {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.languageButton:hover .languageButton__flag {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* ========================================
+   Responsive Breakpoints
+   ======================================== */
+
+/* Tablets and below (hide desktop nav, show mobile menu) */
+@media (max-width: 1024px) {
+  .header__inner {
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+  }
+
+  .navMain {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: block;
+    order: 3;
+    justify-self: end;
+  }
+
+  .header__actions {
+    gap: 8px;
+    order: 2;
+  }
+
+  /* Hide "Launch" button, language toggle, and avatar on tablets */
+  .header__actions .btn,
+  .header__actions .languageButton,
+  .header__actions .avatar {
+    display: none;
+  }
+
+  .iconButton {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .brand {
+    font-size: 14px;
+    order: 1;
+  }
+
+  .brand__logo {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 640px) {
+  .header__inner {
+    padding: 12px 0;
+  }
+
+  .header__actions {
+    gap: 6px;
+  }
+
+  /* Hide notification button on very small screens */
+  .header__actions .iconButton {
+    display: none;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .avatar__inner {
+    font-size: 12px;
+  }
+
+  .brand {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+  }
+
+  .brand__logo {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+/* Large screens - ensure mobile menu is hidden */
+@media (min-width: 1025px) {
+  .mobileMenuButton {
+    display: none !important;
+  }
+}

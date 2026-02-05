@@ -1,7 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getLocale } from "@/components/useLocale";
+import { t } from "@/lib/i18n";
 
-export function Footer() {
+export async function Footer() {
+  const locale = await getLocale();
+
   return (
     <footer className="footer">
       <div className="container footer__inner">
@@ -19,57 +23,54 @@ export function Footer() {
                 <span className="footer__logoText">Aeris</span>
               </span>
             </Link>
-            <p className="footer__tagline">
-              Tu crias. Nós tornamos real. Uma vitrine demo para experimentar UX
-              de e-commerce (sem pagamentos reais).
-            </p>
+            <p className="footer__tagline">{t(locale, "footer_tagline")}</p>
           </div>
 
           <nav className="footer__nav" aria-label="Footer">
             <div className="footer__col">
-              <p className="footer__title">Explorar</p>
+              <p className="footer__title">{t(locale, "footer_explore")}</p>
               <div className="footer__links">
                 <Link className="footer__link" href="/shop">
-                  Shop
+                  {t(locale, "nav_shop")}
                 </Link>
                 <Link className="footer__link" href="/discover">
-                  Discover
+                  {t(locale, "nav_discover")}
                 </Link>
                 <Link className="footer__link" href="/create">
-                  Create
+                  {t(locale, "nav_create")}
                 </Link>
               </div>
             </div>
 
             <div className="footer__col">
-              <p className="footer__title">Aeris</p>
+              <p className="footer__title">{t(locale, "footer_aeris")}</p>
               <div className="footer__links">
                 <a className="footer__link" href="#quality-process">
-                  Qualidade & Processo
+                  {t(locale, "footer_quality")}
                 </a>
                 <Link className="footer__link" href="/cart">
-                  Carrinho
+                  {t(locale, "nav_cart")}
                 </Link>
               </div>
             </div>
 
             <div className="footer__col">
-              <p className="footer__title">Legal</p>
+              <p className="footer__title">{t(locale, "footer_legal")}</p>
               <div className="footer__links">
                 <a className="footer__link" href="#" aria-disabled="true">
-                  Privacidade
+                  {t(locale, "footer_privacy")}
                 </a>
                 <a className="footer__link" href="#" aria-disabled="true">
-                  Termos
+                  {t(locale, "footer_terms")}
                 </a>
                 <a className="footer__link" href="#" aria-disabled="true">
-                  Cookies
+                  {t(locale, "footer_cookies")}
                 </a>
               </div>
             </div>
 
             <div className="footer__col">
-              <p className="footer__title">Contactos</p>
+              <p className="footer__title">{t(locale, "footer_contacts")}</p>
               <div className="footer__links">
                 <a className="footer__link" href="mailto:hello@aeris.demo">
                   hello@aeris.demo
@@ -96,10 +97,7 @@ export function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p className="footer__note">
-            Demo shop built for learning. No affiliation with any brand. No real
-            payments.
-          </p>
+          <p className="footer__note">{t(locale, "footer_note")}</p>
           <p className="footer__copy">© {new Date().getFullYear()} Aeris</p>
         </div>
       </div>

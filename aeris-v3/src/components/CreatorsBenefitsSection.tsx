@@ -1,4 +1,6 @@
 import Link from "next/link";
+import type { Locale } from "@/lib/i18n";
+import { t } from "@/lib/i18n";
 
 type Benefit = {
   title: string;
@@ -28,7 +30,7 @@ const benefits: Benefit[] = [
   },
 ];
 
-export function CreatorsBenefitsSection() {
+export function CreatorsBenefitsSection({ locale = "pt" }: { locale?: Locale }) {
   return (
     <section
       className="creatorsBenefits"
@@ -37,20 +39,17 @@ export function CreatorsBenefitsSection() {
       <div className="container">
         <div className="creatorsBenefits__head">
           <div>
-            <p className="eyebrow">Para criadores</p>
-            <h2 id="creators-benefits-title">O que tu ganhas conosco</h2>
-            <p className="creatorsBenefits__sub">
-              Publica a tua ideia, deixa a comunidade decidir e transforma design em
-              impacto (e receita).
-            </p>
+            <p className="eyebrow">{t(locale, "creators_eyebrow")}</p>
+            <h2 id="creators-benefits-title">{t(locale, "creators_title")}</h2>
+            <p className="creatorsBenefits__sub">{t(locale, "creators_sub")}</p>
           </div>
 
           <div className="creatorsBenefits__cta">
             <Link className="btn btn--primary" href="/shop">
-              Começar a explorar
+              {t(locale, "creators_cta_explore")}
             </Link>
             <a className="btn btn--ghost" href="#quality-process">
-              Ver como funciona
+              {t(locale, "home_cta_how")}
             </a>
           </div>
         </div>
@@ -64,9 +63,7 @@ export function CreatorsBenefitsSection() {
           ))}
         </div>
 
-        <p className="creatorsBenefits__fineprint">
-          Nota: esta é uma demo. Os valores e percentagens são ilustrativos.
-        </p>
+        <p className="creatorsBenefits__fineprint">{t(locale, "creators_fineprint")}</p>
       </div>
     </section>
   );

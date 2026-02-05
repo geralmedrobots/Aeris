@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { CreatorsBenefitsSection } from "@/components/CreatorsBenefitsSection";
 import { FeaturedTabs } from "@/components/client/FeaturedTabs";
+import { getLocale } from "@/components/useLocale";
+import { t } from "@/lib/i18n";
 
 const featuredShoes = [
 	{
@@ -179,7 +181,9 @@ const featuredShoes = [
 	},
 ];
 
-export default function Home() {
+export default async function Home() {
+	const locale = await getLocale();
+
 	return (
 		<main className="home">
 			<section className="heroAeris">
@@ -202,18 +206,15 @@ export default function Home() {
 
 				<div className="container heroAeris__inner">
 					<div className="heroAeris__copy">
-						<p className="eyebrow">Aeris Collective</p>
-						<h1>Tu crias. Nós tornamos real.</h1>
-						<p className="heroAeris__lead">
-							Cria os teus ténis ideais, valida com a comunidade, compra e
-							torna-os reais.
-						</p>
+						<p className="eyebrow">{t(locale, "home_eyebrow")}</p>
+						<h1>{t(locale, "home_title")}</h1>
+						<p className="heroAeris__lead">{t(locale, "home_lead")}</p>
 						<div className="heroAeris__actions">
 							<Link className="btn btn--primary" href="/shop">
-								Comprar agora
+								{t(locale, "home_cta_shop")}
 							</Link>
 							<a className="btn btn--ghost" href="#quality-process">
-								Ver como funciona
+								{t(locale, "home_cta_how")}
 							</a>
 						</div>
 					</div>
@@ -222,50 +223,42 @@ export default function Home() {
 				</div>
 			</section>
 
-			<FeaturedTabs shoes={featuredShoes} />
+			<FeaturedTabs shoes={featuredShoes} locale={locale} />
 
-			<CreatorsBenefitsSection />
+			<CreatorsBenefitsSection locale={locale} />
 
 			<section className="qualityProcess" id="quality-process">
 				<div className="container">
 					<div className="qualityProcess__header">
-						<h2>Qualidade e Processo</h2>
+						<h2>{t(locale, "quality_title")}</h2>
 						<p className="qualityProcess__subtitle">
-							Do design à entrega: transparência em cada passo
+							{t(locale, "quality_subtitle")}
 						</p>
 					</div>
 
 					<div className="qualityProcess__grid">
 						<div className="qualityProcess__card">
 							<div className="qualityProcess__icon">✨</div>
-							<h3>Design Colaborativo</h3>
-							<p>
-								A comunidade vota e valida cada design antes de passar para produção.
-							</p>
+							<h3>{t(locale, "quality_card1_title")}</h3>
+							<p>{t(locale, "quality_card1_desc")}</p>
 						</div>
 
 						<div className="qualityProcess__card">
 							<div className="qualityProcess__icon">🔍</div>
-							<h3>Controlo de Qualidade</h3>
-							<p>
-								Materiais premium e inspeção rigorosa garantem excelência em cada par.
-							</p>
+							<h3>{t(locale, "quality_card2_title")}</h3>
+							<p>{t(locale, "quality_card2_desc")}</p>
 						</div>
 
 						<div className="qualityProcess__card">
 							<div className="qualityProcess__icon">🏭</div>
-							<h3>Produção Transparente</h3>
-							<p>
-								Acompanha o processo de fabrico em tempo real, do início ao fim.
-							</p>
+							<h3>{t(locale, "quality_card3_title")}</h3>
+							<p>{t(locale, "quality_card3_desc")}</p>
 						</div>
 
 						<div className="qualityProcess__card">
 							<div className="qualityProcess__icon">📦</div>
-							<h3>Entrega Garantida</h3>
-							<p>
-								Envio seguro e rastreável para que os teus ténis cheguem perfeitos.
-							</p>
+							<h3>{t(locale, "quality_card4_title")}</h3>
+							<p>{t(locale, "quality_card4_desc")}</p>
 						</div>
 					</div>
 				</div>

@@ -1,8 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MobileMenu } from "./client/MobileMenu";
+import { LanguageToggle } from "./client/LanguageToggle";
+import { getLocale } from "@/components/useLocale";
+import { t } from "@/lib/i18n";
 
-export function Header() {
+export async function Header() {
+  const locale = await getLocale();
+
   return (
     <header className="siteHeader">
       <div className="container header__inner">
@@ -21,31 +26,30 @@ export function Header() {
 
         <nav className="navMain">
           <Link className="navMain__item navMain__item--active" href="/create">
-            Create
+            {t(locale, "nav_create")}
           </Link>
           <Link className="navMain__item" href="/discover">
-            Discover
+            {t(locale, "nav_discover")}
           </Link>
           <Link className="navMain__item" href="/shop">
-            Shop
+            {t(locale, "nav_shop")}
           </Link>
         </nav>
 
         <MobileMenu />
 
         <div className="header__actions">
-          <button className="iconButton" type="button" aria-label="Notificações">
+          <button
+            className="iconButton"
+            type="button"
+            aria-label={t(locale, "header_notifications")}
+          >
             🔔
           </button>
           <Link className="btn btn--primary" href="/launch">
-            Launch Your idea
+            {t(locale, "header_launch")}
           </Link>
-          <button className="languageButton" type="button">
-            Português
-            <span className="languageButton__flag" aria-hidden>
-              🇵🇹
-            </span>
-          </button>
+          <LanguageToggle />
           <button className="avatar" type="button" aria-label="Perfil">
             <span className="avatar__inner" aria-hidden>
               MR

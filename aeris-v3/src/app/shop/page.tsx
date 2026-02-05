@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { products } from "@/lib/products";
 import { ProductCard } from "@/components/ProductCard";
+import { getLocale } from "@/components/useLocale";
+import { t } from "@/lib/i18n";
 
 type Props = {
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
@@ -12,6 +14,7 @@ function asString(v: string | string[] | undefined) {
 }
 
 export default async function ShopPage({ searchParams }: Props) {
+  const locale = await getLocale();
   const sp = (await searchParams) ?? {};
   const tag = asString(sp.tag);
   const q = asString(sp.q)?.trim().toLowerCase();
@@ -30,20 +33,20 @@ export default async function ShopPage({ searchParams }: Props) {
       <div className="container">
         <div className="section__head">
           <div>
-            <h1>Shop</h1>
+            <h1>{t(locale, "shop_title")}</h1>
             <p className="muted">
-              {filtered.length} item{filtered.length === 1 ? "" : "s"}
-              {tag ? ` · Tag: ${tag}` : ""}
+              {filtered.length} {t(locale, "shop_items")}
+              {tag ? ` · ${t(locale, "shop_tag")}: ${tag}` : ""}
             </p>
           </div>
           <Link className="textLink" href="/">
-            ← Home
+            ← {t(locale, "shop_home")}
           </Link>
         </div>
 
         <div className="filters">
           <div className="filterRow">
-            <span className="muted">Quick tags:</span>
+            <span className="muted">{t(locale, "shop_quick_tags")}</span>
             <div className="tagRow">
               {[
                 ["new", "New"],
@@ -62,7 +65,7 @@ export default async function ShopPage({ searchParams }: Props) {
                 </Link>
               ))}
               <Link className={`chip ${!tag ? "chip--active" : ""}`} href="/shop">
-                All
+                {t(locale, "shop_all")}
               </Link>
             </div>
           </div>
@@ -72,11 +75,11 @@ export default async function ShopPage({ searchParams }: Props) {
             <input
               name="q"
               defaultValue={q ?? ""}
-              placeholder="Search products…"
-              aria-label="Search"
+              placeholder={t(locale, "shop_search_placeholder")}
+              aria-label={t(locale, "shop_search")}
             />
             <button className="btn btn--ghost" type="submit">
-              Search
+              {t(locale, "shop_search")}
             </button>
           </form>
         </div>

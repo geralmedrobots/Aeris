@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { LanguageToggle } from "./LanguageToggle";
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,8 +23,24 @@ export function MobileMenu() {
       </button>
 
       {isOpen && (
-        <div className="mobileMenuOverlay" onClick={() => setIsOpen(false)}>
+        <>
+          <div className="mobileMenuOverlay" onClick={() => setIsOpen(false)} />
           <nav className="mobileMenu" onClick={(e) => e.stopPropagation()}>
+            <div className="mobileMenu__header">
+              <button
+                className="avatar avatar--mobile"
+                type="button"
+                aria-label="Perfil"
+              >
+                <span className="avatar__inner" aria-hidden>
+                  MR
+                </span>
+              </button>
+              <span className="mobileMenu__userName">My Account</span>
+            </div>
+
+            <div className="mobileMenu__divider" />
+
             <Link
               className="mobileMenu__item"
               href="/create"
@@ -45,8 +62,24 @@ export function MobileMenu() {
             >
               Shop
             </Link>
+
+            <div className="mobileMenu__divider" />
+
+            <Link
+              className="mobileMenu__item"
+              href="/launch"
+              onClick={() => setIsOpen(false)}
+            >
+              🚀 Launch
+            </Link>
+
+            <div className="mobileMenu__divider" />
+
+            <div className="mobileMenu__footer">
+              <LanguageToggle />
+            </div>
           </nav>
-        </div>
+        </>
       )}
     </>
   );
