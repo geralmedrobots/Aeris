@@ -2032,3 +2032,34 @@ select:focus {
     );
   }
 }
+
+/* Mobile: make featured carousel cards taller (70% of viewport height) and centered */
+@media (max-width: 768px) {
+  .featuredGrid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .featuredCard {
+    height: 70vh;
+    height: 70svh;
+    width: min(520px, 92vw);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .featuredCard__media {
+    height: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  .featuredCard__body {
+    flex: 0 0 auto;
+  }
+
+  .featuredCard__dots {
+    margin-top: auto;
+  }
+}
