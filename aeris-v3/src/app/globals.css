@@ -1898,6 +1898,17 @@ select:focus {
     padding-bottom: 40px;
   }
 
+  .heroAeris__copy {
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    padding-right: 0;
+  }
+
+  .heroAeris__actions {
+    justify-content: center;
+  }
+
   .heroAeris__video {
     position: relative;
     inset: auto;
@@ -1911,12 +1922,7 @@ select:focus {
   }
 
   .heroAeris__video::after {
-    background: linear-gradient(
-      180deg,
-      rgba(245, 246, 251, 0.92) 0%,
-      rgba(245, 246, 251, 0.6) 55%,
-      rgba(245, 246, 251, 0.25) 100%
-    );
+    display: none;
   }
 }
 
