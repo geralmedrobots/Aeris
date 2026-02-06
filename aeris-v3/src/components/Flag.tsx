@@ -22,8 +22,7 @@ const FlagSvgs: Record<string, React.ReactNode> = {
              <path fill="#ffd600" d="M-50 -60h100v100h-100z" opacity="0" />
               <circle r="100" fill="#ffd600" stroke="#ffd600" />
               <path fill="#fff" d="M-60 -40 h120 v80 h-120 z" />
-               <path fill="#000099" d="M-35 -50 h70 v70 h-70 z M0 -60 v40 M-20 -20 h40" stroke="#fff" strokeWidth="5" fill="none"/>
-               <shield fill="#f00" /> 
+               <path fill="none" d="M-35 -50 h70 v70 h-70 z M0 -60 v40 M-20 -20 h40" stroke="#fff" strokeWidth="5"/>
                {/* Simplified coat of arms */}
                <path fill="#ff0000" d="M-45 -40 h90 v60 c0 30 -20 50 -45 50 c-25 0 -45 -20 -45 -50 v-60" />
                <path fill="#ffffff" d="M-30 -25 h60 v40 c0 20 -10 30 -30 30 c-20 0 -30 -10 -30 -30 v-40" />
