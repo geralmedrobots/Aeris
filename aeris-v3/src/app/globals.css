@@ -1845,6 +1845,17 @@ select:focus {
   );
 }
 
+@media (min-width: 901px) {
+  .heroAeris__video {
+    left: 50%;
+    width: 50%;
+  }
+
+  .heroAeris__video::after {
+    display: none;
+  }
+}
+
 @media (max-width: 900px) {
   .heroAeris__inner {
     grid-template-columns: 1fr;
