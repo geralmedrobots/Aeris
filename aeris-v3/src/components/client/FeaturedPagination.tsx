@@ -9,7 +9,6 @@ interface Shoe {
   likes: string;
   progress: string;
   author: string;
-  tone: string;
   image: string;
   badge?: string;
 }
@@ -95,14 +94,13 @@ export function FeaturedPagination({ shoes, itemsPerPage = 6 }: FeaturedPaginati
               <span className="featuredCard__badge">{shoe.badge}</span>
             ) : null}
             <h3 className="featuredCard__title">{shoe.name}</h3>
-            <DynamicImageCard
-              src={shoe.image}
-              alt={shoe.name}
-              className="featuredCard__media"
-            />
-            <div className="featuredCard__body">
-              <p className="featuredCard__tone">{shoe.tone}</p>
-              <div className="featuredCard__stats">
+            <div className="featuredCard__mediaWrapper">
+              <DynamicImageCard
+                src={shoe.image}
+                alt={shoe.name}
+                className="featuredCard__media"
+              />
+              <div className="featuredCard__statsOverlay">
                 <span className="featuredCard__stat">
                   <span className="featuredCard__icon">❤</span>
                   <span className="featuredCard__value">{shoe.votes}</span>
@@ -112,6 +110,8 @@ export function FeaturedPagination({ shoes, itemsPerPage = 6 }: FeaturedPaginati
                   <span className="featuredCard__value">{shoe.likes}</span>
                 </span>
               </div>
+            </div>
+            <div className="featuredCard__body">
               <div className="featuredCard__author">
                 <span className="avatar avatar--sm" aria-hidden>
                   {shoe.author
@@ -126,12 +126,10 @@ export function FeaturedPagination({ shoes, itemsPerPage = 6 }: FeaturedPaginati
                   <span
                     className={`featuredCard__progressFill ${getProgressColor(shoe.progress)}`}
                     style={{ width: shoe.progress }}
-                  />
+                  >
+                    <span className="featuredCard__progressText">{shoe.progress}</span>
+                  </span>
                 </div>
-              </div>
-              <div className="featuredCard__footer">
-                <span className="featuredCard__progressText">{shoe.progress}</span>
-                <span className="featuredCard__votesLabel">para produção</span>
               </div>
             </div>
           </article>

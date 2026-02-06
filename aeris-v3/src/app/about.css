@@ -65,7 +65,7 @@
 
 .aboutMission {
   padding: 100px 0;
-  background: #f5f5f5;
+  /* background: #f5f5f5; */
 }
 
 .mission__grid {
@@ -389,7 +389,7 @@
 
 .aboutCTA {
   padding: 100px 0;
-  background: #f5f5f5;
+  /* background: #f5f5f5; */
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 

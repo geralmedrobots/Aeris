@@ -13,9 +13,9 @@ export interface FeaturedShoe {
 	likes: string;
 	progress: string;
 	author: string;
-	tone: string;
 	image: string;
 	badge?: string;
+	country?: string;
 }
 
 function toNumberCompact(value: string): number {

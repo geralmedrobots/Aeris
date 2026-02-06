@@ -10,7 +10,6 @@ type DiscoverItem = {
   votes: string;
   likes: string;
   progress: string;
-  tone: string;
   image: string;
   badge?: string;
   status: "voting" | "production" | "completed";
@@ -24,7 +23,6 @@ const discoverItems: DiscoverItem[] = [
     likes: "1.2k",
     progress: "10%",
     author: "Joana Mendes",
-    tone: "Gradiente alperce",
     image: "/products/1/1.png",
     status: "voting",
   },
@@ -35,7 +33,6 @@ const discoverItems: DiscoverItem[] = [
     likes: "1.5k",
     progress: "100%",
     author: "Ricardo Costa",
-    tone: "Carvão com neon",
     badge: "Em produção",
     image: "/products/1/2.png",
     status: "production",
@@ -47,7 +44,6 @@ const discoverItems: DiscoverItem[] = [
     likes: "890",
     progress: "50%",
     author: "Inês Batista",
-    tone: "Nude esportivo",
     image: "/products/1/4.png",
     status: "voting",
   },
@@ -58,7 +54,6 @@ const discoverItems: DiscoverItem[] = [
     likes: "1.1k",
     progress: "65%",
     author: "Miguel Santos",
-    tone: "Cinza minimalista",
     image: "/products/1/5.png",
     status: "voting",
   },
@@ -69,7 +64,6 @@ const discoverItems: DiscoverItem[] = [
     likes: "1.4k",
     progress: "82%",
     author: "Ana Silva",
-    tone: "Preto urbano",
     image: "/products/1/6.png",
     status: "voting",
   },
@@ -80,7 +74,6 @@ const discoverItems: DiscoverItem[] = [
     likes: "980",
     progress: "71%",
     author: "Pedro Alves",
-    tone: "Azul dinâmico",
     image: "/products/1/7.png",
     status: "voting",
   },
@@ -91,7 +84,6 @@ const discoverItems: DiscoverItem[] = [
     likes: "1.3k",
     progress: "78%",
     author: "Sofia Pereira",
-    tone: "Branco premium",
     image: "/products/1/8.png",
     status: "voting",
   },
@@ -102,7 +94,6 @@ const discoverItems: DiscoverItem[] = [
     likes: "1.7k",
     progress: "88%",
     author: "Tiago Ferreira",
-    tone: "Vermelho racing",
     badge: "Quase lá!",
     image: "/products/1/9.png",
     status: "voting",
@@ -114,7 +105,6 @@ const discoverItems: DiscoverItem[] = [
     likes: "820",
     progress: "62%",
     author: "Mariana Costa",
-    tone: "Verde natural",
     image: "/products/1/10.png",
     status: "voting",
   },
@@ -125,7 +115,6 @@ const discoverItems: DiscoverItem[] = [
     likes: "1.2k",
     progress: "75%",
     author: "João Oliveira",
-    tone: "Grafite tech",
     image: "/products/1/11.png",
     status: "voting",
   },
@@ -136,7 +125,6 @@ const discoverItems: DiscoverItem[] = [
     likes: "1.5k",
     progress: "84%",
     author: "Beatriz Lopes",
-    tone: "Prata lunar",
     image: "/products/1/12.png",
     status: "voting",
   },
@@ -147,7 +135,6 @@ const discoverItems: DiscoverItem[] = [
     likes: "950",
     progress: "69%",
     author: "Rui Cardoso",
-    tone: "Laranja energético",
     image: "/products/1/13.png",
     status: "voting",
   },
@@ -173,7 +160,7 @@ export default async function DiscoverPage({ searchParams }: Props) {
     if (filter === "production" && item.status !== "production") return false;
     if (filter === "completed" && item.status !== "completed") return false;
     if (q) {
-      const hay = `${item.name} ${item.author} ${item.tone}`.toLowerCase();
+      const hay = `${item.name} ${item.author}`.toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
@@ -254,32 +241,31 @@ export default async function DiscoverPage({ searchParams }: Props) {
                 {item.badge && (
                   <span className="discoverCard__badge">{item.badge}</span>
                 )}
+                <div className="discoverCard__statsOverlay">
+                  <div className="discoverCard__stat">
+                    <span className="discoverCard__statIcon">❤</span>
+                    <span>{item.votes}</span>
+                  </div>
+                  <div className="discoverCard__stat">
+                    <span className="discoverCard__statIcon">☆</span>
+                    <span>{item.likes}</span>
+                  </div>
+                </div>
               </div>
 
               <div className="discoverCard__content">
                 <h3 className="discoverCard__title">{item.name}</h3>
                 <p className="discoverCard__author">{t(locale, "discover_by")} {item.author}</p>
-                <p className="discoverCard__tone">{item.tone}</p>
-
-                <div className="discoverCard__stats">
-                  <div className="discoverCard__stat">
-                    <span className="discoverCard__statIcon">👍</span>
-                    <span>{item.votes}</span>
-                  </div>
-                  <div className="discoverCard__stat">
-                    <span className="discoverCard__statIcon">❤️</span>
-                    <span>{item.likes}</span>
-                  </div>
-                </div>
 
                 <div className="discoverCard__progress">
                   <div className="discoverCard__progressBar">
                     <div
                       className="discoverCard__progressFill"
                       style={{ width: item.progress }}
-                    />
+                    >
+                      <span className="discoverCard__progressText">{item.progress}</span>
+                    </div>
                   </div>
-                  <span className="discoverCard__progressText">{item.progress}</span>
                 </div>
 
                 <div className="discoverCard__actions">

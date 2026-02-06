@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { DynamicImageCard } from './DynamicImageCard';
+import { Flag } from '../Flag';
 
 interface Shoe {
   name: string;
@@ -9,9 +10,9 @@ interface Shoe {
   likes: string;
   progress: string;
   author: string;
-  tone: string;
   image: string;
   badge?: string;
+  country?: string;
 }
 
 interface FeaturedCardCarouselProps {
@@ -41,6 +42,16 @@ export function FeaturedCardCarousel({
   const [isPaused, setIsPaused] = useState(false);
 
   const currentShoe = shoes[currentIndex];
+  // Helper for flag
+  const country = currentShoe.country || 'Portugal';
+
+  // Helper for avatar initials
+  const initials = currentShoe.author
+    .split(' ')
+    .map((part) => part[0])
+    .slice(0, 2)
+    .join('')
+    .toUpperCase();
 
   // Auto-play effect
   useEffect(() => {
@@ -108,15 +119,13 @@ export function FeaturedCardCarousel({
 
       <h3 className="featuredCard__title">{currentShoe.name}</h3>
 
-      <DynamicImageCard
-        src={currentShoe.image}
-        alt={currentShoe.name}
-        className="featuredCard__media"
-      />
-
-      <div className="featuredCard__body">
-        <p className="featuredCard__tone">{currentShoe.tone}</p>
-        <div className="featuredCard__stats">
+      <div className="featuredCard__mediaWrapper">
+        <DynamicImageCard
+          src={currentShoe.image}
+          alt={currentShoe.name}
+          className="featuredCard__media"
+        />
+        <div className="featuredCard__statsOverlay">
           <span className="featuredCard__stat">
             <span className="featuredCard__icon">❤</span>
             <span className="featuredCard__value">{currentShoe.votes}</span>
@@ -126,26 +135,29 @@ export function FeaturedCardCarousel({
             <span className="featuredCard__value">{currentShoe.likes}</span>
           </span>
         </div>
-        <div className="featuredCard__author">
-          <span className="avatar avatar--sm" aria-hidden>
-            {currentShoe.author
-              .split(' ')
-              .map((part) => part[0])
-              .join('')}
-          </span>
-          <span className="featuredCard__authorName">{currentShoe.author}</span>
+      </div>
+
+      <div className="featuredCard__metaRow">
+        <div className="featuredCard__authorInfo">
+          <span className="avatar avatar--sm">{initials}</span>
+          <span className="featuredCard__authorNameSm">{currentShoe.author}</span>
         </div>
+        <div className="featuredCard__countryInfo">
+          <Flag country={country} className="featuredCard__flag" />
+          <span className="featuredCard__countryName">{country}</span>
+        </div>
+      </div>
+
+      <div className="featuredCard__body">
         <div className="featuredCard__progress">
           <div className="featuredCard__progressBar">
             <span
               className={`featuredCard__progressFill ${getProgressColor(currentShoe.progress)}`}
               style={{ width: currentShoe.progress }}
-            />
+            >
+              <span className="featuredCard__progressText">{currentShoe.progress}</span>
+            </span>
           </div>
-        </div>
-        <div className="featuredCard__footer">
-          <span className="featuredCard__progressText">{currentShoe.progress}</span>
-          <span className="featuredCard__votesLabel">para produção</span>
         </div>
       </div>
 

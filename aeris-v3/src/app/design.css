@@ -117,7 +117,7 @@
 
 .designPrinciples {
   padding: 100px 0;
-  background: #f5f5f5;
+  /* background: #f5f5f5; */
   position: relative;
 }
 
@@ -467,7 +467,7 @@
 
 .designCTA {
   padding: 100px 0;
-  background: #ffffff;
+  /* background: #ffffff; */
   position: relative;
   overflow: hidden;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
