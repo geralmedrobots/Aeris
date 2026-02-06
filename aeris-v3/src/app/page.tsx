@@ -253,7 +253,7 @@ export default async function Home() {
 						</div>
 					</div>
 
-					<div className="community__grid">
+                    {/*<div className="community__grid">
 						<div className="community__card">
 							<div className="community__icon">🎨</div>
 							<h3>Crie Designs</h3>
@@ -273,7 +273,7 @@ export default async function Home() {
 						</div>
 					</div>
 
-                    {/*<div className="community__cta">
+                    <div className="community__cta">
 						<h3>Pronto para criar?</h3>
 						<div className="community__ctaActions">
 							<Link href="/design" className="btn btn--primary">
