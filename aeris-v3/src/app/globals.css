@@ -1854,6 +1854,20 @@ select:focus {
   .heroAeris__video::after {
     display: none;
   }
+
+  .heroAeris__inner {
+    max-width: 100%;
+    margin-left: 0;
+    padding-left: 40px;
+    padding-right: 0;
+  }
+
+  .heroAeris__copy {
+    text-align: left;
+    justify-items: start;
+    align-items: start;
+    padding-right: 60px; /* Prevent text touching the video area too much */
+  }
 }
 
 @media (max-width: 900px) {
