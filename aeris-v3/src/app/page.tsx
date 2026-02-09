@@ -234,10 +234,7 @@ export default async function Home() {
 					<div className="community__content">
 						<p className="community__eyebrow">Comunidade Aeris</p>
 						<h2>Empoderando criadores com design inteligente</h2>
-						<p className="community__lead">
-							Ferramentas de IA para criar, personalizar e validar ideias com
-							uma rede global de talentos.
-						</p>
+						
 					</div>
 
 					<div className="community__visual">
@@ -252,7 +249,7 @@ export default async function Home() {
 							<div className="community__node community__node--1">
 								<div className="community__avatarRing">
 									<img
-										src="/blog/1/1.png"
+										src="/personal/1.jpg"
 										alt="Criadora em Lisboa"
 										loading="lazy"
 									/>
@@ -262,7 +259,7 @@ export default async function Home() {
 							<div className="community__node community__node--2">
 								<div className="community__avatarRing">
 									<img
-										src="/blog/2/2.png"
+										src="/personal/2.jpg"
 										alt="Criador em São Paulo"
 										loading="lazy"
 									/>
@@ -272,7 +269,7 @@ export default async function Home() {
 							<div className="community__node community__node--3">
 								<div className="community__avatarRing">
 									<img
-										src="/blog/3/1.png"
+										src="/personal/3.jpg"
 										alt="Designer em Nova York"
 										loading="lazy"
 									/>
@@ -282,7 +279,7 @@ export default async function Home() {
 							<div className="community__node community__node--4">
 								<div className="community__avatarRing">
 									<img
-										src="/blog/1/3.png"
+										src="/personal/4.jpg"
 										alt="Criadora em Seul"
 										loading="lazy"
 									/>
@@ -292,7 +289,7 @@ export default async function Home() {
 							<div className="community__node community__node--5">
 								<div className="community__avatarRing">
 									<img
-										src="/blog/2/3.png"
+										src="/personal/5.jpg"
 										alt="Criador em Cidade do Cabo"
 										loading="lazy"
 									/>
@@ -302,7 +299,7 @@ export default async function Home() {
 							<div className="community__node community__node--6">
 								<div className="community__avatarRing">
 									<img
-										src="/blog/3/2.png"
+										src="/personal/6.jpg"
 										alt="Designer em Tóquio"
 										loading="lazy"
 									/>
