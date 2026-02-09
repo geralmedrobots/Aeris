@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c2a3a54c-7eb8-489a-85b2-0052344329f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/about.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/forgot-password/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/forgot-password/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +21,8 @@
   </component>
   <component name="CopilotUserSelectedModel">
     <selectedModels>
-      <entry key="chat-panel" value="Claude Sonnet 4.5" />
-      <entry key="agent-panel" value="Claude Sonnet 4.5" />
+      <entry key="chat-panel" value="GPT-5.2" />
+      <entry key="agent-panel" value="GPT-5.2" />
     </selectedModels>
   </component>
   <component name="Git.Settings">
@@ -98,7 +96,7 @@
       <workItem from="1770370369797" duration="1797000" />
       <workItem from="1770372985730" duration="5231000" />
       <workItem from="1770383642064" duration="13821000" />
-      <workItem from="1770644778717" duration="2624000" />
+      <workItem from="1770644778717" duration="4179000" />
     </task>
     <servers />
   </component>

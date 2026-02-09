@@ -238,7 +238,7 @@ export default async function Home() {
 						</p>
 					</div>
 
-					<div className="community__stats">
+                    {/*<div className="community__stats">
 						<div className="community__stat">
 							<div className="community__statNumber">50k+</div>
 							<div className="community__statLabel">Criadores</div>
@@ -253,7 +253,7 @@ export default async function Home() {
 						</div>
 					</div>
 
-                    {/*<div className="community__grid">
+                    <div className="community__grid">
 						<div className="community__card">
 							<div className="community__icon">🎨</div>
 							<h3>Crie Designs</h3>
