@@ -9,6 +9,10 @@ export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
+  const locale = pathname?.startsWith("/en") ? "en" : "pt";
+  const signInText = locale === "pt" ? "Entrar" : "Sign In";
+  const signUpText = locale === "pt" ? "Criar conta" : "Sign Up";
+
   return (
     <>
       <button
@@ -40,6 +44,28 @@ export function MobileMenu() {
               </button>
               <span className="mobileMenu__userName">My Account</span>
             </div>
+
+            <div className="mobileMenu__divider" />
+
+            {/* Auth actions for mobile */}
+            <Link
+              className={`mobileMenu__item ${
+                pathname === "/login" ? "mobileMenu__item--active" : ""
+              }`}
+              href="/login"
+              onClick={() => setIsOpen(false)}
+            >
+              {signInText}
+            </Link>
+            <Link
+              className={`mobileMenu__item ${
+                pathname === "/register" ? "mobileMenu__item--active" : ""
+              }`}
+              href="/register"
+              onClick={() => setIsOpen(false)}
+            >
+              {signUpText}
+            </Link>
 
             <div className="mobileMenu__divider" />
 
@@ -78,16 +104,6 @@ export function MobileMenu() {
               onClick={() => setIsOpen(false)}
             >
               Shop
-            </Link>
-
-            <div className="mobileMenu__divider" />
-
-            <Link
-              className="mobileMenu__item"
-              href="/launch"
-              onClick={() => setIsOpen(false)}
-            >
-              🚀 Launch
             </Link>
 
             <div className="mobileMenu__divider" />

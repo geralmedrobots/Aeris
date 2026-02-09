@@ -7,7 +7,9 @@ import "../auth.css";
 
 export default function ForgotPasswordPage() {
   const [sent, setSent] = useState(false);
-  const [locale] = useState<"pt" | "en">("pt"); // You can get this from your locale hook
+  const [locale] = useState<"pt" | "en">("pt");
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const translations = {
     pt: {
@@ -32,12 +34,15 @@ export default function ForgotPasswordPage() {
 
   const t = translations[locale];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
+
     // Simulate sending email
-    setTimeout(() => {
-      setSent(true);
-    }, 500);
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    setSent(true);
+    setIsLoading(false);
   };
 
   return (

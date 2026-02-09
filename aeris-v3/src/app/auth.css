@@ -2,6 +2,18 @@
    Auth Pages Styles - Enhanced Animations
    ======================================== */
 
+/* Theme bridge: keep auth pages consistent with the global design tokens */
+:root {
+  --auth-bg: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+  --auth-card-bg: var(--panel);
+  --auth-input-bg: var(--panel);
+
+  /* Semantic status tokens (auth-specific) */
+  --auth-success-bg: rgba(47, 59, 84, 0.08);
+  --auth-success-border: rgba(47, 59, 84, 0.18);
+  --auth-success-text: var(--accent);
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -16,7 +28,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+  background: var(--auth-bg);
   position: relative;
   overflow: hidden;
   padding: 40px 20px;
@@ -56,7 +68,7 @@
 }
 
 .authCard {
-  background: var(--panel);
+  background: var(--auth-card-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 48px;
@@ -134,7 +146,7 @@
   border-radius: var(--radius-sm);
   font-size: 15px;
   color: var(--text);
-  background: var(--panel);
+  background: var(--auth-input-bg);
   transition: all 0.2s ease;
   font-family: inherit;
 }
@@ -308,9 +320,9 @@
 }
 
 .successMessage {
-  background: #d4edda;
-  border: 1px solid #c3e6cb;
-  color: #155724;
+  background: var(--auth-success-bg);
+  border: 1px solid var(--auth-success-border);
+  color: var(--auth-success-text);
   padding: 16px;
   border-radius: var(--radius-sm);
   text-align: center;
@@ -393,34 +405,35 @@
   }
 }
 
-/* Dark mode support (optional) */
+/* Dark mode support (optional)
+   Note: keep auth pages aligned with global tokens when present.
+*/
 @media (prefers-color-scheme: dark) {
   .authPage {
-    background: linear-gradient(135deg, #1a1d23 0%, #2d3748 50%, #1f2937 100%);
+    background: var(--bg);
   }
 
   .authCard {
-    background: rgba(31, 38, 51, 0.95);
-    border-color: rgba(255, 255, 255, 0.1);
+    background: var(--panel);
+    border-color: var(--border);
   }
 
   .formInput {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    background: var(--panel);
+    border-color: var(--border);
+    color: var(--text);
   }
 
   .formInput:focus {
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--panel);
   }
 
   .socialButton {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
+    background: var(--panel);
+    border-color: var(--border);
   }
 
   .socialButton:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--panel-2);
   }
 }
-
