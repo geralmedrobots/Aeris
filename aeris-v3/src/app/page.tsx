@@ -228,7 +228,7 @@ export default async function Home() {
 			</section>
 
 			<FeaturedTabs shoes={featuredShoes} locale={locale} />
-
+            {/* Community Hero Section
 			<section className="community community--hero" id="community">
 				<div className="container community__heroLayout">
 					<div className="community__content">
@@ -310,7 +310,20 @@ export default async function Home() {
 					</div>
 				</div>
 			</section>
+            {/* Community Banner Section */}
+            <section className="communityBanner">
+                <div className="communityBanner__wrapper">
+                    <img
+                        src="/personal/comnidade.png"
+                        alt="Comunidade Aeris"
+                        className="communityBanner__image"
+                    />
+                </div>
+            </section>
+
             <BlogGrid />
+
+
             <section className="community community--cta" id="community1">
                 <div className="container">
                     <div className="community__ctaWrapper">

@@ -3564,3 +3564,36 @@ select:focus {
     aspect-ratio: 4 / 5;
   }
 }
+
+/* ===========================
+   Community Banner Section
+   =========================== */
+
+.communityBanner {
+  width: 100%;
+  margin: 60px 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.communityBanner__wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.communityBanner__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+@media (max-width: 768px) {
+  .communityBanner {
+    margin: 40px 0;
+  }
+}
+
