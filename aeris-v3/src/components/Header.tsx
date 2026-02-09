@@ -46,15 +46,13 @@ export async function Header() {
           >
             🔔
           </button>
-          <Link className="btn btn--primary" href="/launch">
-            {t(locale, "header_launch")}
+          <Link className="btn btn--ghost" href="/login">
+            {locale === "pt" ? "Entrar" : "Sign In"}
+          </Link>
+          <Link className="btn btn--primary" href="/register">
+            {locale === "pt" ? "Criar Conta" : "Sign Up"}
           </Link>
           <LanguageToggle />
-          <button className="avatar" type="button" aria-label="Perfil">
-            <span className="avatar__inner" aria-hidden>
-              MR
-            </span>
-          </button>
         </div>
       </div>
     </StickyHeader>

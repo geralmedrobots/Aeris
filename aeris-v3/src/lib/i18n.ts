@@ -327,6 +327,39 @@ export const I18N: Dict = {
   },
   about_cta_discover: { pt: "Descobrir Designs", en: "Discover Designs" },
   about_cta_shop: { pt: "Explorar Loja", en: "Explore Shop" },
+
+  // Auth Pages
+  auth_login_title: { pt: "Entrar", en: "Sign In" },
+  auth_login_subtitle: { pt: "Entre na sua conta para continuar", en: "Sign in to your account to continue" },
+  auth_email: { pt: "Email", en: "Email" },
+  auth_password: { pt: "Palavra-passe", en: "Password" },
+  auth_remember: { pt: "Lembrar-me", en: "Remember me" },
+  auth_forgot_password: { pt: "Esqueceu a palavra-passe?", en: "Forgot password?" },
+  auth_login_button: { pt: "Entrar", en: "Sign In" },
+  auth_no_account: { pt: "Não tem conta?", en: "Don't have an account?" },
+  auth_signup_link: { pt: "Criar conta", en: "Sign up" },
+  auth_or: { pt: "ou", en: "or" },
+  auth_google: { pt: "Continuar com Google", en: "Continue with Google" },
+  auth_facebook: { pt: "Continuar com Facebook", en: "Continue with Facebook" },
+
+  auth_register_title: { pt: "Criar Conta", en: "Create Account" },
+  auth_register_subtitle: { pt: "Junte-se à comunidade Aeris", en: "Join the Aeris community" },
+  auth_name: { pt: "Nome completo", en: "Full name" },
+  auth_confirm_password: { pt: "Confirmar palavra-passe", en: "Confirm password" },
+  auth_agree_terms: { pt: "Concordo com os", en: "I agree to the" },
+  auth_terms: { pt: "Termos e Condições", en: "Terms and Conditions" },
+  auth_and: { pt: "e", en: "and" },
+  auth_privacy: { pt: "Política de Privacidade", en: "Privacy Policy" },
+  auth_register_button: { pt: "Criar Conta", en: "Create Account" },
+  auth_have_account: { pt: "Já tem conta?", en: "Already have an account?" },
+  auth_login_link: { pt: "Entrar", en: "Sign in" },
+
+  auth_forgot_title: { pt: "Recuperar Palavra-passe", en: "Recover Password" },
+  auth_forgot_subtitle: { pt: "Insira o seu email para receber instruções", en: "Enter your email to receive instructions" },
+  auth_send_instructions: { pt: "Enviar Instruções", en: "Send Instructions" },
+  auth_back_to_login: { pt: "Voltar ao login", en: "Back to login" },
+  auth_reset_sent: { pt: "Email enviado!", en: "Email sent!" },
+  auth_reset_sent_desc: { pt: "Verifique a sua caixa de entrada para instruções de recuperação.", en: "Check your inbox for recovery instructions." },
 };
 
 export function t(locale: Locale, key: keyof typeof I18N): string {
