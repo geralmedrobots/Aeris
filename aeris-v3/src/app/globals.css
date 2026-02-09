@@ -3574,6 +3574,7 @@ select:focus {
   margin: 60px 0;
   padding: 0;
   overflow: hidden;
+  position: relative;
 }
 
 .communityBanner__wrapper {
@@ -3581,6 +3582,45 @@ select:focus {
   max-width: 100%;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Animated gradient overlay */
+.communityBanner__wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(102, 126, 234, 0.3) 50%,
+    transparent 100%
+  );
+  z-index: 2;
+  animation: shimmer 3s infinite;
+  pointer-events: none;
+}
+
+/* Subtle vignette effect */
+.communityBanner__wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
 }
 
 .communityBanner__image {
@@ -3589,11 +3629,103 @@ select:focus {
   display: block;
   object-fit: cover;
   border-radius: 0;
+  filter: grayscale(50%) brightness(0.92) contrast(1.15) saturate(1.2);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInScale 1.2s ease-out;
+  transform-origin: center center;
+}
+
+.communityBanner__wrapper:hover .communityBanner__image {
+  filter: grayscale(20%) brightness(1.05) contrast(1.1) saturate(1.4);
+  transform: scale(1.02);
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Fade in and scale animation */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Floating particles effect */
+.communityBanner::before,
+.communityBanner::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.4), rgba(118, 75, 162, 0.4));
+  filter: blur(60px);
+  opacity: 0.3;
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.communityBanner::before {
+  width: 300px;
+  height: 300px;
+  top: -150px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.communityBanner::after {
+  width: 250px;
+  height: 250px;
+  bottom: -125px;
+  right: -80px;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(30px, -30px) scale(1.1);
+    opacity: 0.5;
+  }
 }
 
 @media (max-width: 768px) {
   .communityBanner {
     margin: 40px 0;
+  }
+
+  .communityBanner__wrapper {
+    border-radius: 0;
+  }
+
+  .communityBanner::before,
+  .communityBanner::after {
+    width: 150px;
+    height: 150px;
+  }
+
+  .communityBanner::before {
+    top: -75px;
+    left: -50px;
+  }
+
+  .communityBanner::after {
+    bottom: -75px;
+    right: -40px;
   }
 }
 
