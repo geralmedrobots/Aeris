@@ -229,65 +229,92 @@ export default async function Home() {
 
 			<FeaturedTabs shoes={featuredShoes} locale={locale} />
 
-			<section className="community" id="community">
-				<div className="container">
-					<div className="community__header">
-						<h2>Junte-se à Comunidade</h2>
-						<p className="community__subtitle">
-							Designers de todo o mundo criando o futuro juntos
+			<section className="community community--hero" id="community">
+				<div className="container community__heroLayout">
+					<div className="community__content">
+						<p className="community__eyebrow">Comunidade Aeris</p>
+						<h2>Empoderando criadores com design inteligente</h2>
+						<p className="community__lead">
+							Ferramentas de IA para criar, personalizar e validar ideias com
+							uma rede global de talentos.
 						</p>
 					</div>
 
-                    {/*<div className="community__stats">
-						<div className="community__stat">
-							<div className="community__statNumber">50k+</div>
-							<div className="community__statLabel">Criadores</div>
-						</div>
-						<div className="community__stat">
-							<div className="community__statNumber">12k+</div>
-							<div className="community__statLabel">Designs</div>
-						</div>
-						<div className="community__stat">
-							<div className="community__statNumber">200+</div>
-							<div className="community__statLabel">Lançamentos</div>
+					<div className="community__visual">
+						<div className="community__network">
+							<span className="community__line community__line--1" />
+							<span className="community__line community__line--2" />
+							<span className="community__line community__line--3" />
+							<span className="community__spark community__spark--1" />
+							<span className="community__spark community__spark--2" />
+							<span className="community__spark community__spark--3" />
+
+							<div className="community__node community__node--1">
+								<div className="community__avatarRing">
+									<img
+										src="/blog/1/1.png"
+										alt="Criadora em Lisboa"
+										loading="lazy"
+									/>
+								</div>
+								<span className="community__nodeLabel">Lisboa</span>
+							</div>
+							<div className="community__node community__node--2">
+								<div className="community__avatarRing">
+									<img
+										src="/blog/2/2.png"
+										alt="Criador em São Paulo"
+										loading="lazy"
+									/>
+								</div>
+								<span className="community__nodeLabel">São Paulo</span>
+							</div>
+							<div className="community__node community__node--3">
+								<div className="community__avatarRing">
+									<img
+										src="/blog/3/1.png"
+										alt="Designer em Nova York"
+										loading="lazy"
+									/>
+								</div>
+								<span className="community__nodeLabel">Nova York</span>
+							</div>
+							<div className="community__node community__node--4">
+								<div className="community__avatarRing">
+									<img
+										src="/blog/1/3.png"
+										alt="Criadora em Seul"
+										loading="lazy"
+									/>
+								</div>
+								<span className="community__nodeLabel">Seul</span>
+							</div>
+							<div className="community__node community__node--5">
+								<div className="community__avatarRing">
+									<img
+										src="/blog/2/3.png"
+										alt="Criador em Cidade do Cabo"
+										loading="lazy"
+									/>
+								</div>
+								<span className="community__nodeLabel">Cidade do Cabo</span>
+							</div>
+							<div className="community__node community__node--6">
+								<div className="community__avatarRing">
+									<img
+										src="/blog/3/2.png"
+										alt="Designer em Tóquio"
+										loading="lazy"
+									/>
+								</div>
+								<span className="community__nodeLabel">Tóquio</span>
+							</div>
 						</div>
 					</div>
-
-                    <div className="community__grid">
-						<div className="community__card">
-							<div className="community__icon">🎨</div>
-							<h3>Crie Designs</h3>
-							<p>Use IA para criar designs únicos e inovadores</p>
-						</div>
-
-						<div className="community__card">
-							<div className="community__icon">🗳️</div>
-							<h3>Vote & Colabore</h3>
-							<p>Ajude a escolher os próximos lançamentos</p>
-						</div>
-
-						<div className="community__card">
-							<div className="community__icon">💰</div>
-							<h3>Ganhe Royalties</h3>
-							<p>Receba comissões dos seus designs aprovados</p>
-						</div>
-					</div>
-
-                    <div className="community__cta">
-						<h3>Pronto para criar?</h3>
-						<div className="community__ctaActions">
-							<Link href="/design" className="btn btn--primary">
-								Começar Agora
-							</Link>
-							<Link href="/about" className="btn btn--ghost">
-								Saiba Mais
-							</Link>
-						</div>
-					</div>*/}
 				</div>
 			</section>
             <BlogGrid />
-            <section className="community" id="community1">
+            <section className="community community--cta" id="community1">
                 <div className="container">
                     <div className="community__ctaWrapper">
                         <div className="community__ctaDecoLeft">
