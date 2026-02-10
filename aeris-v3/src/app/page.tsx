@@ -228,13 +228,12 @@ export default async function Home() {
 			</section>
 
 			<FeaturedTabs shoes={featuredShoes} locale={locale} />
-            {/* Community Hero Section
+            {/* Community Hero Section*/}
 			<section className="community community--hero" id="community">
 				<div className="container community__heroLayout">
 					<div className="community__content">
-						<p className="community__eyebrow">Comunidade Aeris</p>
-						<h2>Empoderando criadores com design inteligente</h2>
-						
+						<h2>Empowering Creators with Intelligent Design</h2>
+						<p className="community__lead">AI-driven tools to create, personalize and scale content globally.</p>
 					</div>
 
 					<div className="community__visual">
@@ -246,71 +245,66 @@ export default async function Home() {
 							<span className="community__spark community__spark--2" />
 							<span className="community__spark community__spark--3" />
 
-							<div className="community__node community__node--1">
-								<div className="community__avatarRing">
-									<img
-										src="/personal/1.jpg"
-										alt="Criadora em Lisboa"
-										loading="lazy"
-									/>
-								</div>
-								<span className="community__nodeLabel">Lisboa</span>
+						<div className="community__node community__node--1">
+							<div className="community__avatarRing">
+								<img
+									src="/personal/1.jpg"
+									alt="Criadora em Lisboa"
+									loading="lazy"
+								/>
 							</div>
-							<div className="community__node community__node--2">
-								<div className="community__avatarRing">
-									<img
-										src="/personal/2.jpg"
-										alt="Criador em São Paulo"
-										loading="lazy"
-									/>
-								</div>
-								<span className="community__nodeLabel">São Paulo</span>
+						</div>
+						<div className="community__node community__node--2">
+							<div className="community__avatarRing">
+								<img
+									src="/personal/2.jpg"
+									alt="Criador em São Paulo"
+									loading="lazy"
+								/>
 							</div>
-							<div className="community__node community__node--3">
-								<div className="community__avatarRing">
-									<img
-										src="/personal/3.jpg"
-										alt="Designer em Nova York"
-										loading="lazy"
-									/>
-								</div>
-								<span className="community__nodeLabel">Nova York</span>
+						</div>
+						<div className="community__node community__node--3">
+							<div className="community__avatarRing">
+								<img
+									src="/personal/3.jpg"
+									alt="Designer em Nova York"
+									loading="lazy"
+								/>
 							</div>
-							<div className="community__node community__node--4">
-								<div className="community__avatarRing">
-									<img
-										src="/personal/4.jpg"
-										alt="Criadora em Seul"
-										loading="lazy"
-									/>
-								</div>
-								<span className="community__nodeLabel">Seul</span>
+						</div>
+						<div className="community__node community__node--4">
+							<div className="community__avatarRing">
+								<img
+									src="/personal/4.jpg"
+									alt="Criadora em Seul"
+									loading="lazy"
+								/>
 							</div>
-							<div className="community__node community__node--5">
-								<div className="community__avatarRing">
-									<img
-										src="/personal/5.jpg"
-										alt="Criador em Cidade do Cabo"
-										loading="lazy"
-									/>
-								</div>
-								<span className="community__nodeLabel">Cidade do Cabo</span>
+						</div>
+						<div className="community__node community__node--5">
+							<div className="community__avatarRing">
+								<img
+									src="/personal/5.jpg"
+									alt="Criador em Cidade do Cabo"
+									loading="lazy"
+								/>
 							</div>
-							<div className="community__node community__node--6">
-								<div className="community__avatarRing">
-									<img
-										src="/personal/6.jpg"
-										alt="Designer em Tóquio"
-										loading="lazy"
-									/>
-								</div>
-								<span className="community__nodeLabel">Tóquio</span>
+						</div>
+						<div className="community__node community__node--6">
+							<div className="community__avatarRing">
+								<img
+									src="/personal/6.jpg"
+									alt="Designer em Tóquio"
+									loading="lazy"
+								/>
 							</div>
+						</div>
 						</div>
 					</div>
 				</div>
 			</section>
             {/* Community Banner Section */}
+            {/*
             <section className="communityBanner">
                 <div className="communityBanner__wrapper">
                     <img
@@ -320,7 +314,7 @@ export default async function Home() {
                     />
                 </div>
             </section>
-
+*/}
             <BlogGrid />
 
 

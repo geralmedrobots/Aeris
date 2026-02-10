@@ -11,7 +11,6 @@ export function MobileMenu() {
 
   const locale = pathname?.startsWith("/en") ? "en" : "pt";
   const signInText = locale === "pt" ? "Entrar" : "Sign In";
-  const signUpText = locale === "pt" ? "Criar conta" : "Sign Up";
 
   return (
     <>
@@ -56,15 +55,6 @@ export function MobileMenu() {
               onClick={() => setIsOpen(false)}
             >
               {signInText}
-            </Link>
-            <Link
-              className={`mobileMenu__item ${
-                pathname === "/register" ? "mobileMenu__item--active" : ""
-              }`}
-              href="/register"
-              onClick={() => setIsOpen(false)}
-            >
-              {signUpText}
             </Link>
 
             <div className="mobileMenu__divider" />

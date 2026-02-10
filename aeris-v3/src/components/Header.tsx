@@ -39,18 +39,8 @@ export async function Header() {
         <MobileMenu />
 
         <div className="header__actions">
-          <button
-            className="iconButton"
-            type="button"
-            aria-label={t(locale, "header_notifications")}
-          >
-            🔔
-          </button>
           <Link className="btn btn--ghost" href="/login">
             {locale === "pt" ? "Entrar" : "Sign In"}
-          </Link>
-          <Link className="btn btn--primary" href="/register">
-            {locale === "pt" ? "Criar Conta" : "Sign Up"}
           </Link>
           <LanguageToggle />
         </div>
